@@ -20,5 +20,15 @@ public class Cviko01_Uloha06 {
     {
         var stream = Arrays.stream(input.split(" "));
         return stream.filter(p->p.length()<=2).count() > 1;
+
+// Alternativa:
+//        var split = input.split(" ");
+//        int counter=0;
+//        for (var s:split)
+//        {
+//            if(s.length() <= 2)
+//                counter++;
+//        }
+//        return counter > 1;
     }
 }

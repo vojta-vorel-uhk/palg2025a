@@ -18,5 +18,7 @@ public class Cviko01_Uloha01 {
     public static boolean isOk(String input)
     {
         return input.compareTo("Budapešť") < 0;
+        // Domácí úkol: zjistit jak porovnávat podle abecedy
+        // aby nebyla case-sensitive
     }
 }

@@ -6,14 +6,15 @@ import java.util.Scanner;
 public class Cviko01_Uloha07 {
     public static void main(String[] args)
     {
-        String string = "Rychnov nad Kněžnou";
-        Edit(string);
+        String[] strings
+                = new String[]{"Rychnov nad Kněžnou"};
+        Edit(strings);
         // Co se vypíše?
-        System.out.println(string);
+        System.out.println(strings[0]);
     }
 
-    public static void Edit(String string)
+    public static void Edit(String[] strings)
     {
-        string = "Nejlepší město: "+string;
+        strings[0] = "Nejlepší město: "+strings[0];
     }
 }

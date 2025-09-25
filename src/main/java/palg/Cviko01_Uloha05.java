@@ -17,6 +17,7 @@ public class Cviko01_Uloha05 {
 
     public static boolean isOk(String input)
     {
-       return input.chars().distinct().count() >= input.length();
+       return input.chars().distinct()
+               .count() >= input.length();
     }
 }

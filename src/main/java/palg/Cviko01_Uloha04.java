@@ -19,10 +19,13 @@ public class Cviko01_Uloha04 {
     public static boolean isOk(String input)
     {
         input = input.toLowerCase();
+
         for(int i=0;i<input.length();i++)
         {
             if(input.charAt(i) != input.charAt(input.length()-1-i))
+            {
                 return false;
+            }
         }
         return true;
     }
