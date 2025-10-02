@@ -15,7 +15,11 @@ public class Cviko02_FileUtils
     public static int[] integersFromFile(String fileName) throws IOException
     {
         Path path = Paths.get(System.getProperty("user.dir"),"input",fileName);
-        return Files.readAllLines(path, StandardCharsets.UTF_8).stream().mapToInt(Integer::parseInt).toArray();
+        return Files.readAllLines(path, StandardCharsets.UTF_8)
+                .stream()
+                .map(s->s.strip())
+                .mapToInt(Integer::parseInt)
+                .toArray();
     }
 
     public static float[] floatsFromFile(String fileName) throws IOException
