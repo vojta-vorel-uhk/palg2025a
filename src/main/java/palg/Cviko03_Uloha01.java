@@ -9,7 +9,8 @@ public class Cviko03_Uloha01
         // Doplň jiný způsob deklarace 2D pole,
         // tak aby mělo stejné rozměry jako matrix0
 
-        int[][] matrix1;// = new int[...][...];
+        int[][] matrix1 = new int[1000][5];
+        int vpravoDole = matrix1[999][4];
 
     }
 }

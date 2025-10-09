@@ -16,6 +16,14 @@ public class Cviko03_Uloha04
     // Doplň metodu, která vypíše prvky matice do konzole
     public static void print(double[][] matrix)
     {
-
+        for (int y=0; y<matrix.length; y++)
+        {
+            for (int x=0; x<matrix[y].length; x++)
+            {
+                //System.out.print(matrix[y][x]);
+                System.out.printf("%6.2f",matrix[y][x]);
+            }
+            System.out.println();
+        }
     }
 }

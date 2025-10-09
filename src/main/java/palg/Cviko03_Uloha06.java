@@ -16,5 +16,15 @@ public class Cviko03_Uloha06
     // Doplň metodu, která matici převrátí podle hlavní diagonály (osy)
     public static void mirror(double[][] matrix)
     {
+        cyklus1: for (int y=0; y<matrix.length; y++)
+        {
+            cyklus2: for (int x=0; x<y; x++)
+            {
+                double temp = matrix[x][y];
+                matrix[x][y] = matrix[y][x];
+                matrix[y][x] = temp;
+                continue cyklus1;
+            }
+        }
     }
 }

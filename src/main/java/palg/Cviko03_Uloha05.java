@@ -17,10 +17,22 @@ public class Cviko03_Uloha05
     // Doplň metodu, která vypíše součet prvků na hlavní diagonále
     public static void writeMatrixInfo0(double[][] matrix)
     {
+        double sum=0;
+        for (int i=0;i<matrix.length;i++)
+        {
+            sum += matrix[i][i];
+        }
+        System.out.println(sum);
     }
 
     // Doplň metodu, která vypíše součet prvků na vedlejší diagonále
     public static void writeMatrixInfo1(double[][] matrix)
     {
+        double sum=0;
+        for (int i=0;i<matrix.length;i++)
+        {
+            sum += matrix[i][matrix.length-1-i];
+        }
+        System.out.println(sum);
     }
 }
