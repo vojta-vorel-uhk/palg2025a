@@ -8,7 +8,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class Gls implements DeliveryService {
+public class Gls extends DeliveryService {
 
     private HttpRequest request;
     @Override

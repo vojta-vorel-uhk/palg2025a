@@ -1,9 +1,16 @@
 package palg.Cviko04_Uloha02.Shop;
 
-public interface DeliveryService
-{
-    void PrepareRequest(String[] customerDetails, String[] orderDetails);
+import palg.Cviko04_Uloha02.Corporation.OneClickDeliveryService;
 
-    void SendRequest();
+public abstract class DeliveryService implements OneClickDeliveryService
+{
+    public abstract void PrepareRequest(String[] customerDetails, String[] orderDetails);
+
+    public abstract void SendRequest();
+
+    public void PrepareAndSendRequest(String[] customerDetails, String[] orderDetails){
+        PrepareRequest(customerDetails,orderDetails);
+        SendRequest();
+    }
 }
 

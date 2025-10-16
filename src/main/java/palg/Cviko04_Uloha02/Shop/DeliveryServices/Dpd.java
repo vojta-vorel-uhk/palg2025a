@@ -8,7 +8,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class Dpd implements DeliveryService {
+public class Dpd extends DeliveryService {
 
     private HttpRequest request;
     @Override

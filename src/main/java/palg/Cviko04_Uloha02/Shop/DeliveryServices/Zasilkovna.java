@@ -8,7 +8,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class Zasilkovna implements DeliveryService {
+public class Zasilkovna extends DeliveryService {
 
     private HttpRequest request;
     @Override
