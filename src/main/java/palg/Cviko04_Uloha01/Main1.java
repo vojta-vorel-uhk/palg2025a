@@ -11,7 +11,8 @@ public class Main1
             Scanner scanner = new Scanner(System.in);
             System.out.println("Zadejte řetězec k zašifrování:");
             String plain = scanner.next();
-            SuperSecurityEncryptor s = new SuperSecurityEncryptor();
+            SuperSecurityEncryptor s
+                    = new SuperSecurityEncryptor();
             System.out.println("Výsledek:");
             System.out.println(s.EncryptString(plain));
         }

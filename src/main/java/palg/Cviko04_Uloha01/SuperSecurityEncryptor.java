@@ -1,6 +1,7 @@
 package palg.Cviko04_Uloha01;
 
 import java.util.Random;
+import java.util.random.RandomGenerator;
 
 public class SuperSecurityEncryptor
 {
@@ -118,10 +119,12 @@ public class SuperSecurityEncryptor
     ///     seedを種とした、(2^mexp-1)周期の擬似乱数ジェネレーターを初期化します。
     ///     mexpは607,1279,2281,4253,11213,19937,44497,86243,132049,216091のいずれかである必要があります。
     /// </summary>
-    Random r = new Random();
+    RandomSource r;
 
-    public SuperSecurityEncryptor()
+    public SuperSecurityEncryptor(
+            RandomSource r)
     {
+        this.r = r;
         int seed = 2;
         int ui;
 
