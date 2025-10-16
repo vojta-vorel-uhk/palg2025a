@@ -11,19 +11,26 @@ public class Main2
         System.out.println("Pokud důvěřujete webu randomnumberapi.com, stiskněte R.");
         System.out.println("Pokud důvěřujete náhodnosti z aktuálního času, stiskněte N.");
         var ch = scanner.next().charAt(0);
+        RandomSource randomSource;
         switch (ch) {
-            case 'J': {
-            }
-            case 'R': {
-            }
-            case 'N': {
-            }
+            case 'J':
+                randomSource = new DefaultRandomSource();
+                break;
+            case 'R':
+                randomSource = new WebRandomSource();
+                break;
+            case 'N':
+                randomSource = new TimeRandomSource();
+                break;
+            default:
+                return;
         }
 
         while (true) {
             System.out.println("Zadejte řetězec k zašifrování:");
             String plain = scanner.next();
-            SuperSecurityEncryptor s = new SuperSecurityEncryptor();
+            SuperSecurityEncryptor s = new SuperSecurityEncryptor(
+                    randomSource);
             System.out.println("Výsledek:");
             System.out.println(s.EncryptString(plain));
         }
