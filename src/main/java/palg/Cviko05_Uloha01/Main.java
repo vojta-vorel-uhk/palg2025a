@@ -5,6 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
 
 public class Main
 {
@@ -16,5 +17,21 @@ public class Main
 
         Path path = Paths.get(System.getProperty("user.dir"),"input","5fb2a3cb-51c5-4574-9e85-783745fa59d2.txt");
         var lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+        HashMap<String,Long> hashMap = new HashMap<>();
+        for(var line : lines)
+        {
+           var parts = line.replace(" bytes","").split(";");
+           var ip = parts[0];
+           var bytes = Long.parseLong(parts[1]);
+           var current = hashMap.getOrDefault(ip,0L);
+           hashMap.put(ip,current+bytes);
+        }
+        for (var key : hashMap.keySet())
+        {
+            System.out.println(
+                    key
+                    + ":"
+                    + hashMap.get(key));
+        }
     }
 }
