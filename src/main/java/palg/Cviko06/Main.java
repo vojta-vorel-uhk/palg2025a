@@ -1,5 +1,8 @@
 package palg.Cviko06;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Main
 {
     public static final Location HradecKralove = new Location(new double[]{15.8329925,50.2107875},"Hradec Králové");
@@ -12,6 +15,14 @@ public class Main
 
     public static void main(String[] args)
     {
+        List<Location> list = new LinkedList<>();
+        list.add(HradecKralove);
+        list.add(0,Pardubice);
+        list.add(0,Praha);
+        list.add(1,Munchen);
+        list.add(1,Beograd);
+        list.add(0,KarlovyVary);
+        System.out.println(list.indexOf(Munchen));
         // 1
         // Založ LinkedList
         // Přidej HradecKralove
@@ -22,7 +33,8 @@ public class Main
         // Přidej KarlovyVary na první pozici
 
         // 2
-        // Naprogramuj vlastní variantu spojového seznamu pod názvem RouteList
+        // Naprogramuj vlastní variantu spojového seznamu
+        // pod názvem RouteList
 
         // 3
         // Přidej možnost procházet RouteList pomocí for-each cyklu (musí být iterable)
