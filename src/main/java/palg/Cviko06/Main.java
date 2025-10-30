@@ -12,6 +12,20 @@ public class Main
 
     public static void main(String[] args)
     {
+        // 1
+        // Založ LinkedList
+        // Přidej HradecKralove
+        // Přidej Pardubice na první pozici
+        // Přidej Praha na první pozici
+        // Přidej Munchen na pozici 1
+        // Přidej Beograd na pozici 1
+        // Přidej KarlovyVary na první pozici
+
+        // 2
+        // Naprogramuj vlastní variantu spojového seznamu pod názvem RouteList
+
+        // 3
+        // Přidej možnost procházet RouteList pomocí for-each cyklu (musí být iterable)
 
     }
   }
