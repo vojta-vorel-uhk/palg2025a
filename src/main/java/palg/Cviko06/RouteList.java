@@ -15,15 +15,23 @@ public class RouteList implements Iterable<Location>
 
     public void addLast(Location location)
     {
+        RouteListNode newNode = new RouteListNode(null, location);
+        if(first == null)
+        {
+            first = newNode;
+            return;
+        }
         RouteListNode last = first;
         while ( last.getNext() != null )
         { last = last.getNext();  }
-        RouteListNode newNode
-                = new RouteListNode(null, location);
+
         last.setNext(newNode);
     }
     public Location get(int index)
     {
+        if(first == null || index < 0)
+            throw new IndexOutOfBoundsException();
+
         RouteListNode current = first;
         for (int i=0;i<index;i++)
         {
