@@ -10,13 +10,25 @@ public class Main {
         int successCount = 0;
         StringBuffer s = new StringBuffer();
         for (var q : queries) {
-
-
-            // Pokud db obsahuje položku s klíčem q, zvyš successCount
-
-
+            if(find(db,q,0,db.length))
+                successCount++;
         }
         System.out.println("Successful queries count: "+ successCount);
-        System.out.print("Trvalo to " + (System.currentTimeMillis() - startTime) / 1000 + " sekund");
+        System.out.print("Trvalo to " + (System.currentTimeMillis() - startTime) + " milisekund");
+    }
+
+    private static boolean find(
+     Item[] db, int q, int start,int count)
+    {
+        if(count == 1){
+            return db[start].Key == q;
+        }
+        int leftCount = count/2;
+        if(db[start+leftCount].Key > q ) {
+            return find(db, q, start, leftCount);
+        }
+        else {
+            return find(db, q, start + leftCount, count-leftCount);
+        }
     }
 }
