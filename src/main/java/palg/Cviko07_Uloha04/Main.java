@@ -8,9 +8,9 @@ public class Main {
 
     public static void printNumbers(long start)
     {
+        System.out.println(start);
         if(start <= 1)
             return;
-
         if(start % 2 == 0)
             printNumbers(start /2);
         else
