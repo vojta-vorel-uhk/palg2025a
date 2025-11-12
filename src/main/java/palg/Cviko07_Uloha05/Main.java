@@ -3,7 +3,10 @@ package palg.Cviko07_Uloha05;
 public class Main {
     public static void main(String[] args)
     {
-        fibonacci(50);
+        long startTime = System.currentTimeMillis();
+        System.out.println(fibonacci(42));
+        System.out.print("Trvalo to " + (System.currentTimeMillis() - startTime) + " ms");
+
     }
     public static long fibonacci(long index)
     {
