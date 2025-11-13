@@ -4,19 +4,44 @@ import java.util.ArrayList;
 
 public class PalgMap
 {
-    private ArrayList<PalgMapNode> nodes = new ArrayList<>();
-    public Person get(long key)
-    {
-        for(var n:nodes)
+    PalgMapNode root = null;
+    public Person get(long key) {
+        PalgMapNode current = root;
+        while (true)
         {
-            if(n.getKey() == key)
-                return n.getValue();
+            if(current == null)
+                return null;
+            if(key == current.getKey())
+                return current.getValue();
+            if(key < current.getKey())
+                current = current.getLeft();
+            else
+                current = current.getRight();
         }
-        return null;
     }
 
-    public void put(long key, Person value)
-    {
-        nodes.add(new PalgMapNode(key, value));
+    public void put(long key, Person value){
+        var newNode = new PalgMapNode(key,value,null,null);
+        if(root == null){
+            root = newNode;
+            return;
+        }
+        PalgMapNode current = root;
+        while (true) {
+            if (key < current.getKey()) {
+                if(current.getLeft() == null){
+                    current.setLeft(newNode);
+                    return;
+                }
+                current = current.getLeft();
+            }
+            else {
+                if(current.getRight()==null){
+                    current.setRight(newNode);
+                    return;
+                }
+                current = current.getRight();
+            }
+        }
     }
 }
