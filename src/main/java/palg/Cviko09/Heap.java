@@ -9,11 +9,41 @@ public class Heap
 
     public Heap(int capacity)
     {
-        this.data = new Message[capacity];
+        data = new Message[capacity];
         count = 0;
     }
+
+    public Message extractMin()
+    {
+        var result = data[0];
+        data[0] = data[count-1];
+        var currentIndex = 0;
+        while(true){
+            var lowerChildIndex = lowerChildIndex(currentIndex);
+            if(lowerChildIndex == -1)
+                break;
+            if(data[currentIndex].compareTo(data[lowerChildIndex])>0){
+                swap(lowerChildIndex,currentIndex);
+                currentIndex = lowerChildIndex;
+            }
+            else{
+                break;
+            }
+        }
+
+        return result;
+    }
+    private int lowerChildIndex(int current){
+        var right = rightChild(current);
+        var left = leftChild(current);
+        if(left >= count) return  -1;
+        if(right < count && data[right].compareTo(data[left])<0)
+            return right;
+        return left;
+    }
+
     public void add(Message m){
-        this.data[count] = m;
+        data[count] = m;
         count++;
         repair(count);
     }
