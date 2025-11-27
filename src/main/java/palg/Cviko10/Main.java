@@ -9,11 +9,11 @@ public class Main
 {
     public static void main(String[] args)
     {
-        new NoSorter().sortWithReport(randomMessages(), "NoSorter.html");
-        new JavaSorter().sortWithReport(randomMessages(), "JavaSorter.html");
+        //new NoSorter().sortWithReport(randomMessages(), "NoSorter.html");
+        //new JavaSorter().sortWithReport(randomMessages(), "JavaSorter.html");
         //new HeapSorter().sortWithReport(randomMessages(), "HeapSorter.html");
         //new SelectionSorter().sortWithReport(randomMessages(), "SelectionSorter.html");
-        //new InsertionSorter().sortWithReport(randomMessages(),"InsertionSorter.html");
+        new InsertionSorter().sortWithReport(randomMessages(),"InsertionSorter.html");
     }
 
     private static Message[] randomMessages()

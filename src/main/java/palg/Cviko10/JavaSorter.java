@@ -9,7 +9,7 @@ public class JavaSorter extends Sorter
 {
     public void sort(Message[] messages)
     {
-        Arrays.sort(messages,(m1, m2) -> m1.compareTo(m2) );
+        Arrays.sort(messages);
 
         // TODO 1: zbavit se druhého parametru, použít Arrays.sort(messages)
     }
