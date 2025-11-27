@@ -21,4 +21,6 @@ public class Message
     {
         return text;
     }
+
+    public String getColor(){ return "rgba("+(this.unixTimestamp%10000)*255/10000+",100,100,0.3)";}
 }
