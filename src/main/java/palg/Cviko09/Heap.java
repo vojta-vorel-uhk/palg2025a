@@ -44,8 +44,8 @@ public class Heap
 
     public void add(Message m){
         data[count] = m;
-        count++;
         repair(count);
+        count++;
     }
     private void repair(int index){
         int parent= parent(index);
