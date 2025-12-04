@@ -24,7 +24,7 @@ public class Main
 
         // TODO 3: Odkomentuj a zprovozni MergeSorter
         //new MergeSorter().sortWithReport(randomMessages(),"MergeSorter.html");
-        //new BubbleSorter().sortWithReport(randomMessages(),"BubbleSorter.html");
+        new BubbleSorter().sortWithReport(randomMessages(),"BubbleSorter.html");
     }
 
     private static Message[] randomMessages()
