@@ -4,10 +4,10 @@ import palg.Messages.Message;
 
 public class Utils {
 
-    public static void merge(
-            String[] source1,
-            String[] source2,
-            String[] target,
+    public static <T extends Comparable<T>> void merge(
+            T[] source1,
+            T[] source2,
+            T[] target,
             int targetStart)
     {
         int next1 = 0;
