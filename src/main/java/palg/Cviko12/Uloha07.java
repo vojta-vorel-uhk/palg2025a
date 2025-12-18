@@ -8,7 +8,8 @@ public class Uloha07
     {
         // TODO: Co se vypíše?
         String ip = "127.0.0.1";
-        for(var part : ip.split("."))
+        //for(var part : ip.split("\\."))
+        for(var part : ip.split(Pattern.quote(".")))
         {
             System.out.println(part);
         }

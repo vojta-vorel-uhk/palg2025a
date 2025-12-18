@@ -8,8 +8,12 @@ public class Uloha05b
     {
         ZoneId newYorkZone = ZoneId.of("America/New_York");
         var wallclock = LocalDateTime.of(2025,12,18,19,20,0);
-        var zoned = ZonedDateTime.of(wallclock,newYorkZone);
-        var instant = zoned.toInstant();
+        var zoned = ZonedDateTime.of(wallclock,newYorkZone);//1
+        var instant = zoned.toInstant();//2
+        System.out.println(instant);
+        ZoneId pragueZone = ZoneId.of("Europe/Prague");
+        var zoned2 = instant.atZone(pragueZone);
+        System.out.println(zoned2);
 
         // TODO: Hodiny na zdi v New Yorku ukazovaly 18.12.2025, 19:20
         //  Vypiš, jaký datum a čas byl v Praze
